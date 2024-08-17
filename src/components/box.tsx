@@ -1,13 +1,17 @@
-import React from "react";
+import React, { ReactNode } from "react";
 
 type props = {
-    title: string
+    title: string,
+    greet: (a: string) => void,
+    children: ReactNode
 }
 
-function Box({title}: props){
+function Box({title, greet, children}: props){
+    greet("Hello Sahil");
     return (
         <>
         <h1>{title}</h1>
+        {children}
         </>
     )
 }
